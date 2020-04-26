@@ -6,7 +6,7 @@ namespace Shop.Database
 {
   public class ApplicationDbContext : IdentityDbContext
   {
-    protected ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
       : base(options) { }
 
     public DbSet<Product> Products { get; set; }
