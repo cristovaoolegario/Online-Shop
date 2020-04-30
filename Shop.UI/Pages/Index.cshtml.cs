@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Shop.Application.Products;
+using Shop.Application.CreateProducts;
+using Shop.Application.GetProducts;
 using Shop.Database;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-using static Shop.Application.Products.CreateProduct;
 
 namespace Shop.UI.Pages
 {
@@ -17,11 +18,13 @@ namespace Shop.UI.Pages
     }
 
     [BindProperty]
-    public ProductViewModel Product { get; set; }
+    public Application.CreateProducts.ProductViewModel Product { get; set; }
+
+    public IEnumerable<Application.GetProducts.ProductViewModel> Products { get; set; }
 
     public void OnGet()
     {
-
+      Products = new GetProducts(_context).Do();
     }
 
     public async Task<IActionResult> OnPost()

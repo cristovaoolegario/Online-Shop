@@ -2,7 +2,7 @@
 using Shop.Domain.Models;
 using System.Threading.Tasks;
 
-namespace Shop.Application.Products
+namespace Shop.Application.CreateProducts
 {
   public class CreateProduct
   {
@@ -22,13 +22,13 @@ namespace Shop.Application.Products
       });
 
       await _context.SaveChangesAsync();
-    }
+    }    
+  }
 
-    public class ProductViewModel
-    {
-      public string Name { get; set; }
-      public string Description { get; set; }
-      public decimal Value { get; set; }
-    }
+  public class ProductViewModel
+  {
+    public string Name { get; set; }
+    public string Description { get; set; }
+    public decimal Value { get; set; }
   }
 }
