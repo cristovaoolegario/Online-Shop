@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Shop.Application.CreateProducts;
-using Shop.Application.GetProducts;
+using Shop.Application.Products;
 using Shop.Database;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -18,9 +17,9 @@ namespace Shop.UI.Pages
     }
 
     [BindProperty]
-    public Application.CreateProducts.ProductViewModel Product { get; set; }
+    public CreateProduct.ProductViewModel Product { get; set; }
 
-    public IEnumerable<Application.GetProducts.ProductViewModel> Products { get; set; }
+    public IEnumerable<GetProducts.ProductViewModel> Products { get; set; }
 
     public void OnGet()
     {
