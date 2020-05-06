@@ -2,7 +2,7 @@
 using Shop.Domain.Models;
 using System.Threading.Tasks;
 
-namespace Shop.Application.Products
+namespace Shop.Application.ProductsAdmin
 {
   public class CreateProduct
   {
